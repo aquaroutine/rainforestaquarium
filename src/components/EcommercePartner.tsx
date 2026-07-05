@@ -7,10 +7,6 @@ export function EcommercePartner() {
       <p className="text-xs font-medium tracking-[0.2em] uppercase text-muted-light">
         E-commerce Partner
       </p>
-      <p className="max-w-xs text-center text-sm leading-relaxed text-muted">
-        Free product installation on purchases above{' '}
-        <strong className="font-medium text-ink">₹10,000</strong>
-      </p>
       <a
         href={aquaroutineShopUrl}
         target="_blank"
