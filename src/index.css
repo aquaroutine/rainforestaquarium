@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-paper-soft: #fafafa;
+  --color-subtle: #f5f5f5;
+  --color-muted: #737373;
+  --color-muted-light: #a3a3a3;
+  --color-border: #e5e5e5;
+  --color-border-strong: #d4d4d4;
+  --color-charcoal: #171717;
+  --color-charcoal-soft: #262626;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.glass-panel-dark {
+  background: rgba(23, 23, 23, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.12) 50%,
+    transparent
+  );
+}
+
+.section-divider-light {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent
+  );
+}
+
+.btn-primary {
+  @apply rounded-full bg-ink px-8 py-3.5 text-sm font-medium tracking-wide text-paper transition duration-300 hover:bg-charcoal-soft;
+}
+
+.btn-outline {
+  @apply rounded-full border border-paper/40 bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-paper transition duration-300 hover:border-paper hover:bg-paper/10;
+}
+
+.btn-outline-dark {
+  @apply rounded-full border border-ink/20 bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-ink transition duration-300 hover:border-ink hover:bg-ink/5;
+}
+
+/* Transparent PNG monogram: invert black to white on dark backgrounds only */
+.logo-on-dark {
+  filter: invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
