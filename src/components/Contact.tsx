@@ -1,4 +1,5 @@
-import { contact } from '../data/mockData'
+import { contact, googleReviews } from '../data/mockData'
+import { StarRating } from './StarRating'
 
 export function Contact() {
   return (
@@ -13,6 +14,16 @@ export function Contact() {
           <h2 className="font-display mt-3 text-4xl font-medium text-ink sm:text-5xl">
             Visit Us Today
           </h2>
+          <a
+            href="#reviews"
+            className="mt-5 inline-flex items-center gap-2 text-sm text-muted transition hover:text-ink"
+          >
+            <StarRating rating={googleReviews.rating} size="sm" className="text-ink" />
+            <span>
+              {googleReviews.rating.toFixed(1)} on Google ·{' '}
+              {googleReviews.totalReviews} reviews
+            </span>
+          </a>
         </div>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-5">

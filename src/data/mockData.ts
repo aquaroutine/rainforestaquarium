@@ -7,6 +7,7 @@ export const navLinks = [
   { label: 'Gallery', href: '#gallery' },
   { label: 'Shop', href: aquaroutineShopUrl },
   { label: 'About', href: '#about' },
+  { label: 'Reviews', href: '#reviews' },
   { label: 'Contact', href: '#contact' },
 ] as const
 
@@ -172,7 +173,7 @@ export const maintenancePackages = [
       'Cleaning, trimming, and equipment checks',
       'You provide consumables; we apply on visit',
       'Ideal for established hobbyists with stock on hand',
-      'Flexible scheduling across Bengaluru',
+      'Flexible scheduling across India',
     ],
   },
 ] as const
@@ -181,7 +182,7 @@ export const installationPromo = {
   eyebrow: 'Complimentary Service',
   headline: 'Free Installation on Purchases Above ₹10,000',
   description:
-    'Qualifying orders include professional on-site setup — filters, lighting, CO₂ systems, and hardscape — handled by our experienced team at no extra charge.',
+    'Qualifying orders include professional on-site setup — filters, lighting, and CO₂ systems — handled by our experienced team at no extra charge.',
   shopLabel: 'Shop Online',
   contactLabel: 'Contact Us',
 } as const
@@ -539,11 +540,41 @@ const shopAddress =
 
 const mapDirectionsUrl = 'https://maps.app.goo.gl/1eKSi7U5ho6gYPGK8'
 
+/** Opens the Google Maps reviews tab for Rainforest Aquarium (Bannerughatta). */
+const googleReviewsUrl =
+  'https://www.google.com/maps/place/Rainforest+Aquarium/@12.8110838,77.578329,17z/data=!4m8!3m7!1s0x3bae6b5bad390edf:0x4e27a38ce5e9bd53!8m2!3d12.8110838!4d77.578329!9m1!1b1'
+
+/** Google write-review flow for the same listing (place id from Maps). */
+const googleWriteReviewUrl =
+  'https://search.google.com/local/writereview?placeid=ChIJ8b06a9uUrjs1S72O54vxTi0'
+
+export type GoogleReviewHighlight = {
+  id: string
+  author: string
+  rating: number
+  text: string
+  date: string
+  sourceUrl: string
+}
+
+/** Aggregate rating and links — individual review text lives on Google Maps. */
+export const googleReviews = {
+  rating: 4.9,
+  totalReviews: 77,
+  mapsUrl: mapDirectionsUrl,
+  readUrl: googleReviewsUrl,
+  writeUrl: googleWriteReviewUrl,
+  /** Populated when verified review snippets are available; otherwise use Google CTAs. */
+  highlights: [] as GoogleReviewHighlight[],
+} as const
+
 export const contact = {
   address: shopAddress,
   mapEmbedUrl:
     'https://maps.google.com/maps?q=12.8110838,77.578329&t=&z=15&ie=UTF8&iwloc=&output=embed',
   mapDirectionsUrl,
+  googleReviewsUrl,
+  googleWriteReviewUrl,
   phones: ['+91 994 570 1197', '+91 761 929 1197'],
   email: 'rainforestaquariumbangalore@gmail.com',
   hours: 'Mon–Sat 10:00–19:00 · Sun 10:00–17:00',

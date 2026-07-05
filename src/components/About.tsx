@@ -35,7 +35,7 @@ export function About() {
               </p>
               <p>
                 Today our team designs and maintains installations across
-                Bengaluru: serene office reception tanks, courtyard koi ponds,
+                India: serene office reception tanks, courtyard koi ponds,
                 and lush vivarium walls that soften modern architecture.
               </p>
               <p>

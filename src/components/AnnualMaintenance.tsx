@@ -42,8 +42,8 @@ export function AnnualMaintenance() {
             <p className="mt-4 leading-relaxed text-muted">
               A planted tank or pond is a living composition — it needs consistent
               care to stay clear, balanced, and beautiful. For over{' '}
-              <strong className="font-medium text-ink">20 years</strong>, our team
-              has maintained aquariums across Bengaluru — from home nano cubes and
+              <strong className="font-medium text-ink">16 years</strong>, our team
+              has maintained aquariums across India — from home nano cubes and
               cichlid displays to corporate reception features and outdoor koi
               ponds.
             </p>
@@ -59,7 +59,7 @@ export function AnnualMaintenance() {
               </a>
               <div className="flex items-center gap-6 text-sm text-muted">
                 <span>
-                  <strong className="font-medium text-ink">20+</strong> years
+                  <strong className="font-medium text-ink">16+</strong> years
                   experience
                 </span>
                 <span className="hidden h-4 w-px bg-border sm:block" aria-hidden />
@@ -83,7 +83,7 @@ export function AnnualMaintenance() {
                 Experienced team
               </p>
               <p className="mt-1 text-sm leading-relaxed text-muted">
-                Dedicated aquascapers with decades of hands-on tank care — the
+                Dedicated aquascapers with over 16 years of hands-on tank care — the
                 same people, every visit.
               </p>
             </div>

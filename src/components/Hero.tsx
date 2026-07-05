@@ -32,7 +32,7 @@ export function Hero() {
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-paper/70 sm:text-xl">
           We design planted aquariums, koi ponds,
           rainforest vivariums, and terrariums — turning rooms into calm, green
-          sanctuaries across Karnataka.
+          sanctuaries across India.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

@@ -5,6 +5,7 @@ import { Services } from './components/Services'
 import { AnnualMaintenance } from './components/AnnualMaintenance'
 import { Gallery } from './components/Gallery'
 import { About } from './components/About'
+import { Reviews } from './components/Reviews'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 
@@ -19,6 +20,7 @@ export default function App() {
         <AnnualMaintenance />
         <Gallery />
         <About />
+        <Reviews />
         <Contact />
       </main>
       <Footer />
