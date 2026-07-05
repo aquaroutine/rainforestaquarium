@@ -3,6 +3,7 @@ import { siteImages } from '../lib/siteImages'
 
 export const navLinks = [
   { label: 'Services', href: '#services' },
+  { label: 'Maintenance', href: '#maintenance' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Shop', href: aquaroutineShopUrl },
   { label: 'About', href: '#about' },
@@ -46,7 +47,7 @@ export const services = [
     id: 'maintenance',
     title: 'Setup & Care',
     description:
-      'White-glove installation plus scheduled maintenance — water testing, trimming, and filter servicing.',
+      'White-glove installation plus scheduled maintenance — water testing and filter servicing.',
     icon: 'tools',
     image: siteImages.services.maintenance,
   },
@@ -67,6 +68,123 @@ export const services = [
     image: siteImages.services.store,
   },
 ] as const
+
+export const maintenanceIncluded = [
+  {
+    title: 'Water Chemistry',
+    description:
+      'pH, GH, KH, ammonia, nitrite, and nitrate logged each visit — with dosing adjustments for planted and livestock tanks.',
+  },
+  {
+    title: 'Filtration Service',
+    description:
+      'Canister, HOB, and sump media rinsed or replaced on schedule; impellers inspected and intake sponges cleared.',
+  },
+  {
+    title: 'Plant Care',
+    description:
+      'Trimming, replanting, and removal of melt or algae-covered leaves to preserve layout balance and light penetration.',
+  },
+  {
+    title: 'Algae Management',
+    description:
+      'Targeted removal of hair, brush, and film algae; flow and nutrient balance reviewed to reduce recurrence.',
+  },
+  {
+    title: 'Livestock Health',
+    description:
+      'Visual checks on fish, shrimp, and invertebrates; early signs of stress, disease, or aggression noted and reported.',
+  },
+  {
+    title: 'Equipment Checks',
+    description:
+      'CO₂ regulators, solenoids, lighting timers, misting systems, and auto-dosers tested for correct operation.',
+  },
+  {
+    title: 'Glass & Hardscape',
+    description:
+      'Interior glass cleaned, hardscape repositioned where needed, and substrate vacuumed in planted zones.',
+  },
+  {
+    title: 'Visit Reports',
+    description:
+      'After each service you receive a brief summary of parameters, work completed, and any follow-up recommendations.',
+  },
+] as const
+
+export const maintenanceTankTypes = [
+  {
+    id: 'planted',
+    name: 'Planted Tanks',
+    tagline: 'Aquascapes, nano cubes, and high-tech layouts',
+    features: [
+      'CO₂ and fertiliser dosing reviewed each visit',
+      'Plant trimming, replanting, and algae control',
+      'Substrate vacuuming and hardscape adjustment',
+      'Lighting and flow tuned for healthy growth',
+    ],
+  },
+  {
+    id: 'cichlid',
+    name: 'Cichlid Tanks',
+    tagline: 'African, South American, and mixed-species setups',
+    features: [
+      'Aggression and territory monitoring',
+      'Higher bioload filtration service',
+      'Rockwork and cave structure inspection',
+      'Water hardness and pH stability checks',
+    ],
+  },
+  {
+    id: 'non-planted',
+    name: 'Non-Planted Tanks',
+    tagline: 'Community, species, and bare-bottom systems',
+    features: [
+      'Routine glass cleaning and gravel vacuum',
+      'Filter media rinse and replacement schedule',
+      'Livestock health and feeding assessment',
+      'Equipment reliability and leak checks',
+    ],
+  },
+] as const
+
+export const maintenancePackages = [
+  {
+    id: 'with-consumables',
+    name: 'With Consumables',
+    tagline: 'Hands-off care — we supply what your tank needs',
+    highlight: true,
+    features: [
+      'Filter media, carbon, and sponges on schedule',
+      'Water conditioners and dechlorinators',
+      'Plant fertilisers and CO₂ consumables',
+      'Fish foods and targeted supplements as agreed',
+      'Consumable restocking logged each visit',
+    ],
+  },
+  {
+    id: 'without-consumables',
+    name: 'Without Consumables',
+    tagline: 'Expert labour — you keep your preferred brands',
+    highlight: false,
+    features: [
+      'Full on-site service and water testing',
+      'Cleaning, trimming, and equipment checks',
+      'You provide consumables; we apply on visit',
+      'Ideal for established hobbyists with stock on hand',
+      'Flexible scheduling across Bengaluru',
+    ],
+  },
+] as const
+
+export const installationPromo = {
+  eyebrow: 'Complimentary Service',
+  headline: 'Free Installation on Purchases Above ₹10,000',
+  description:
+    'Qualifying orders include professional on-site setup — filters, lighting, CO₂ systems, and hardscape — handled by our experienced team at no extra charge.',
+  shopLabel: 'Shop Online',
+  contactLabel: 'Contact Us',
+} as const
 
 export const galleryItems = [
   {
@@ -407,12 +525,11 @@ export const products: Record<
     { name: 'Consultation — 60 min', price: '₹1,500' },
     { name: 'Hardscape Design Package', price: '₹8,000' },
     { name: 'Full Room Installation', price: 'From ₹45,000' },
-    { name: 'Annual Maintenance Plan', price: 'From ₹18,000/yr' },
+    { name: 'Annual Maintenance Plan', price: 'Contact for quote' },
   ],
 }
 
 export const stats = [
-  { value: '50+', label: 'Plant Species' },
   { value: '500+', label: 'Installations' },
   { value: '1,000+', label: 'Clients Served' },
 ] as const

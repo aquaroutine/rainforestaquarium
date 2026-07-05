@@ -1,7 +1,23 @@
+import { useCallback, useState } from 'react'
 import { galleryItems } from '../data/mockData'
 import { imageFallbackHandler } from '../lib/siteImages'
+import { GalleryLightbox } from './GalleryLightbox'
 
 export function Gallery() {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+
+  const openLightbox = useCallback((index: number) => {
+    setLightboxIndex(index)
+  }, [])
+
+  const closeLightbox = useCallback(() => {
+    setLightboxIndex(null)
+  }, [])
+
+  const navigateLightbox = useCallback((index: number) => {
+    setLightboxIndex(index)
+  }, [])
+
   return (
     <section id="gallery" className="relative bg-paper-soft py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -21,24 +37,40 @@ export function Gallery() {
         </div>
 
         <div className="mt-12 grid auto-rows-[200px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {galleryItems.map((item) => (
+          {galleryItems.map((item, index) => (
             <figure
               key={item.id}
               className={`group relative overflow-hidden rounded-sm border border-border ${
                 item.span === 'large' ? 'sm:col-span-2 sm:row-span-2 sm:auto-rows-fr' : ''
               }`}
             >
-              <img
-                src={item.image}
-                alt={item.title}
-                loading="lazy"
-                onError={imageFallbackHandler}
-                className="h-full min-h-[200px] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-              />
+              <button
+                type="button"
+                onClick={() => openLightbox(index)}
+                aria-label={`View full size: ${item.title}`}
+                className="block h-full w-full cursor-zoom-in overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 focus-visible:ring-offset-2"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  onError={imageFallbackHandler}
+                  className="h-full min-h-[200px] w-full object-cover transition duration-700 group-hover:scale-[1.03] group-focus-visible:scale-[1.03]"
+                />
+              </button>
             </figure>
           ))}
         </div>
       </div>
+
+      {lightboxIndex !== null ? (
+        <GalleryLightbox
+          items={galleryItems}
+          activeIndex={lightboxIndex}
+          onClose={closeLightbox}
+          onNavigate={navigateLightbox}
+        />
+      ) : null}
     </section>
   )
 }

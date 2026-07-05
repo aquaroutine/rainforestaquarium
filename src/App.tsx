@@ -2,6 +2,7 @@ import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { ShowcaseSlider } from './components/ShowcaseSlider'
 import { Services } from './components/Services'
+import { AnnualMaintenance } from './components/AnnualMaintenance'
 import { Gallery } from './components/Gallery'
 import { About } from './components/About'
 import { Contact } from './components/Contact'
@@ -15,6 +16,7 @@ export default function App() {
         <Hero />
         <ShowcaseSlider />
         <Services />
+        <AnnualMaintenance />
         <Gallery />
         <About />
         <Contact />

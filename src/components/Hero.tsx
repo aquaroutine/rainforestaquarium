@@ -1,5 +1,6 @@
 import { aquaroutineShopUrl } from '../lib/shopUrl'
 import { imageFallbackHandler, siteImages } from '../lib/siteImages'
+import { InstallationPromo } from './InstallationPromo'
 
 export function Hero() {
   return (
@@ -18,11 +19,15 @@ export function Hero() {
           Bengaluru
         </p>
 
-        <h1 className="font-display max-w-4xl text-5xl font-medium leading-[1.1] tracking-tight text-paper sm:text-6xl lg:text-7xl">
+        <h1 className="font-display max-w-4xl text-6xl font-medium leading-[1.05] tracking-tight text-paper sm:text-7xl lg:text-8xl">
+          Rainforest Aquarium
+        </h1>
+
+        <h2 className="font-display mt-4 max-w-4xl text-3xl font-medium leading-[1.15] tracking-tight text-paper/90 sm:mt-5 sm:text-4xl lg:text-5xl">
           Living Water,
           <br />
-          <span className="italic text-paper/90">Crafted With Care</span>
-        </h1>
+          <span className="italic text-paper/75">Crafted With Care</span>
+        </h2>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-paper/70 sm:text-xl">
           We design planted aquariums, koi ponds,
@@ -39,20 +44,15 @@ export function Hero() {
           </a>
         </div>
 
-        <div className="mt-20 grid w-full max-w-3xl grid-cols-2 gap-6 border-t border-paper/15 pt-10">
-          {[
-            { label: 'Custom Installs', value: '500+' },
-            { label: 'Species in Stock', value: '200+' },
-          ].map((item) => (
-            <div key={item.label}>
-              <p className="font-display text-2xl font-medium text-paper sm:text-3xl">
-                {item.value}
-              </p>
-              <p className="mt-1 text-xs tracking-[0.15em] uppercase text-paper/50 sm:text-sm">
-                {item.label}
-              </p>
-            </div>
-          ))}
+        <InstallationPromo variant="dark" className="mx-auto mt-10 max-w-xl text-left" />
+
+        <div className="mt-20 w-full max-w-3xl border-t border-paper/15 pt-10 text-center">
+          <p className="font-display text-2xl font-medium text-paper sm:text-3xl">
+            150+
+          </p>
+          <p className="mt-1 text-xs tracking-[0.15em] uppercase text-paper/50 sm:text-sm">
+            Custom Installs
+          </p>
         </div>
       </div>
     </section>

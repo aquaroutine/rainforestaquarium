@@ -45,7 +45,7 @@ export function About() {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-3 gap-6">
+            <div className="mt-10 grid grid-cols-2 gap-6">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center sm:text-left">
                   <p className="font-display text-3xl font-medium text-ink">
